@@ -1,0 +1,30 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /demo
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/day17?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  main:
+    allow-circular-references: true
+
+# 日志
+logging:
+  config: classpath:config/logback.xml
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: mapper/*.xml
+
+
+pagehelper:
+  reasonable: true
